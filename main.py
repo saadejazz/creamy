@@ -27,7 +27,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await update.message.reply_text(f"Creamy knows you are waiting for his message, he'll get back to you!!")
     else:
         await update.message.reply_text(f"Hi! {update.effective_user.first_name}")
-        await update.message.reply_text(f"I will send you a message by Creamy the cat every day")
+        await update.message.reply_text(f"I will send you a message every day to check up on you")
         await update.message.reply_text(f"You can opt out at any time by using /stop, and restart using /start")
         context.job_queue.run_repeating(send_creamy, chat_id=chat_id, name=str(chat_id), interval=86399, first=10)
 
